@@ -21,12 +21,13 @@ public class RandomDecorator implements Decorator {
   public void decorate(Resource resource, DecoratorContext context) {
     // This method is executed on the whole tree of resources.
     // Bottom-up navigation : Java methods -> Java classes -> files -> packages -> modules -> project
-    if (Scopes.isBlockUnit(resource)) {
+	  if (Scopes.isBlockUnit(resource)) {
       // Sonar API includes many libraries like commons-lang and google-collections
       double value = RandomUtils.nextDouble();
+      double stuff = 95;
 
       // Add a measure to the current Java method
-      context.saveMeasure(ExampleMetrics.RANDOM, value);
+      context.saveMeasure(ExampleMetrics.RANDOM, stuff);
 
     } else {
       // we sum random values on resources different than method
