@@ -1,6 +1,5 @@
 package com.mycompany.sonar.reference.batch;
 
-import com.mycompany.sonar.reference.ExampleMetrics;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.RandomUtils;
 import org.sonar.api.batch.Decorator;
@@ -21,11 +20,17 @@ public class RandomDecorator implements Decorator {
   public void decorate(Resource resource, DecoratorContext context) {
     // This method is executed on the whole tree of resources.
     // Bottom-up navigation : Java methods -> Java classes -> files -> packages -> modules -> project
+	  
+	  if(Scopes.isFile(resource)){
+		  System.out.println("got heya");
+		  System.out.println(resource.getLongName());
+		  double stuff = 95;
+	     // context.saveMeasure(DifferentialMetrics.DIFFERENTIALCOVERAGE, stuff);
+	  }
 	  if (Scopes.isBlockUnit(resource)) {
       // Sonar API includes many libraries like commons-lang and google-collections
       double value = RandomUtils.nextDouble();
       double stuff = 95;
-
       // Add a measure to the current Java method
       context.saveMeasure(ExampleMetrics.RANDOM, stuff);
 

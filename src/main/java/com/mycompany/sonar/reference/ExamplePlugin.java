@@ -7,7 +7,7 @@ import org.sonar.api.Properties;
 import org.sonar.api.Property;
 import org.sonar.api.SonarPlugin;
 
-import com.mycompany.sonar.reference.batch.ExampleSensor;
+import com.mycompany.sonar.reference.batch.ExampleMetrics;
 import com.mycompany.sonar.reference.batch.RandomDecorator;
 import com.mycompany.sonar.reference.ui.DifferentialCoverageRubyWidget;
 
@@ -29,10 +29,8 @@ public final class ExamplePlugin extends SonarPlugin {
     return Arrays.asList(
         // Definitions
         ExampleMetrics.class,
-
         // Batch
         ExampleSensor.class, RandomDecorator.class,
-
         // UI
         DifferentialCoverageRubyWidget.class);
   }
