@@ -20,21 +20,30 @@ public class DifferentialDecorator implements Decorator {
   public void decorate(Resource resource, DecoratorContext context) {
     // This method is executed on the whole tree of resources.
     // Bottom-up navigation : Java methods -> Java classes -> files -> packages -> modules -> project
-	  
+	  if(Scopes.isProject(resource)){
+		  double sample = 95;
+		  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
+	  }
+	  // ok - so I saved this - how do I display it...?
 	  if(Scopes.isFile(resource)){
+		  if(resource.getLongName().equals("com.confino.server.Bar")){
+			  double sample = 98;
+			  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
+		  }
+		  if(resource.getLongName().equals("com.confino.server.Foo")){
+			  double sample = 78;
+			  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
+		  }
+		  if(resource.getLongName().equals("com.confino.server.Zap")){
+			  double sample = 32;
+			  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
+		  }
+		  if(resource.getLongName().equals("com.confino.server.SimpleServer")){
+			  double sample = 86;
+			  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
+		  }
 		  System.out.println(resource.getLongName());
 	  }
-	  if (Scopes.isBlockUnit(resource)) {
-      // Sonar API includes many libraries like commons-lang and google-collections
-      double value = RandomUtils.nextDouble();
-      double stuff = 24;
-      // Add a measure to the current Java method
-      context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, stuff);
-
-    } else {
-      // we sum random values on resources different than method
-      context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, MeasureUtils.sum(true, context.getChildrenMeasures(DifferentialMetrics.DIFFERENTIAL)));
-    }
   }
 
   @Override
