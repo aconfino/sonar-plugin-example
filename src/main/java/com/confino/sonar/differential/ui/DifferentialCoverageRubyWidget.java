@@ -1,4 +1,4 @@
-package com.mycompany.sonar.reference.ui;
+package com.confino.sonar.differential.ui;
 
 import org.sonar.api.web.AbstractRubyTemplate;
 import org.sonar.api.web.Description;

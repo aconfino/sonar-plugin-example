@@ -1,4 +1,4 @@
-package com.mycompany.sonar.reference.batch;
+package com.confino.sonar.differential.batch;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.RandomUtils;
@@ -10,7 +10,7 @@ import org.sonar.api.resources.Project;
 import org.sonar.api.resources.Resource;
 import org.sonar.api.resources.Scopes;
 
-public class RandomDecorator implements Decorator {
+public class DifferentialDecorator implements Decorator {
 
   public boolean shouldExecuteOnProject(Project project) {
     // Execute only on Java projects
@@ -22,21 +22,18 @@ public class RandomDecorator implements Decorator {
     // Bottom-up navigation : Java methods -> Java classes -> files -> packages -> modules -> project
 	  
 	  if(Scopes.isFile(resource)){
-		  System.out.println("got heya");
 		  System.out.println(resource.getLongName());
-		  double stuff = 95;
-	     // context.saveMeasure(DifferentialMetrics.DIFFERENTIALCOVERAGE, stuff);
 	  }
 	  if (Scopes.isBlockUnit(resource)) {
       // Sonar API includes many libraries like commons-lang and google-collections
       double value = RandomUtils.nextDouble();
-      double stuff = 95;
+      double stuff = 24;
       // Add a measure to the current Java method
-      context.saveMeasure(ExampleMetrics.RANDOM, stuff);
+      context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, stuff);
 
     } else {
       // we sum random values on resources different than method
-      context.saveMeasure(ExampleMetrics.RANDOM, MeasureUtils.sum(true, context.getChildrenMeasures(ExampleMetrics.RANDOM)));
+      context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, MeasureUtils.sum(true, context.getChildrenMeasures(DifferentialMetrics.DIFFERENTIAL)));
     }
   }
 
