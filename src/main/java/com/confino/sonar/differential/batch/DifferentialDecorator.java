@@ -42,7 +42,6 @@ public class DifferentialDecorator implements Decorator {
 			  double sample = 86;
 			  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
 		  }
-		  System.out.println(resource.getLongName());
 	  }
   }
 
