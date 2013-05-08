@@ -24,25 +24,6 @@ public class DifferentialDecorator implements Decorator {
 		  double sample = 95;
 		  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
 	  }
-	  // ok - so I saved this - how do I display it...?
-	  if(Scopes.isFile(resource)){
-		  if(resource.getLongName().equals("com.confino.server.Bar")){
-			  double sample = 98;
-			  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
-		  }
-		  if(resource.getLongName().equals("com.confino.server.Foo")){
-			  double sample = 78;
-			  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
-		  }
-		  if(resource.getLongName().equals("com.confino.server.Zap")){
-			  double sample = 32;
-			  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
-		  }
-		  if(resource.getLongName().equals("com.confino.server.SimpleServer")){
-			  double sample = 86;
-			  context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, sample);
-		  }
-	  }
   }
 
   @Override

@@ -20,7 +20,7 @@ public final class DifferentialPlugin extends SonarPlugin {
 public List getExtensions() {
     return Arrays.asList(
     		DifferentialMetrics.class, 
-    		DifferentialDecorator.class,
+    	//	DifferentialDecorator.class,
     		DifferentialSensor.class,
     		DifferentialCoverageRubyWidget.class);
   }

@@ -12,7 +12,7 @@ public final class DifferentialMetrics implements Metrics {
 	public static final Metric DIFFERENTIAL = new Metric.Builder("differential_coverage", "Differential Coverage",
 			Metric.ValueType.FLOAT).setDescription("Differential Coverage value")
 			.setDirection(Metric.DIRECTION_BETTER).setQualitative(false)
-			.setDomain(CoreMetrics.DOMAIN_GENERAL).create();
+			.setDomain(CoreMetrics.DOMAIN_SIZE).create();
 
 	// getMetrics() method is defined in the Metrics interface and is used by
 	// Sonar to retrieve the list of new metrics
