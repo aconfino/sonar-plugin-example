@@ -28,7 +28,6 @@ public class DifferentialSensor implements Sensor {
 		for (Resource resource : resources) {
 			getJavaResources(resource, context);
 		}
-		context.saveMeasure(DifferentialMetrics.DIFFERENTIAL, new Double(33));
 		addMetrics(javaResources, context);
 	}
 
