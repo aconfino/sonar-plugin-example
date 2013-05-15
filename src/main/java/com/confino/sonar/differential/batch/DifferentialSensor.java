@@ -46,20 +46,16 @@ public class DifferentialSensor implements Sensor {
 	public void addMetrics(Collection<Resource> javaResources, SensorContext context) {
 		for (Resource resource : javaResources) {
 			if (resource.getName().equals("com.confino.gav.notifier.GavNotifier")) {      
-				System.out.println(resource.getName());
 				context.saveMeasure(resource, DifferentialMetrics.DIFFERENTIAL, new Double(80));
 			}
 			if (resource.getName().equals("com.confino.gav.notifier.MavenUtils")) {
-				System.out.println(resource.getName());
-				context.saveMeasure(resource, DifferentialMetrics.DIFFERENTIAL, new Double(80));
+				context.saveMeasure(resource, DifferentialMetrics.DIFFERENTIAL, new Double(70));
 			}
 			if (resource.getName().equals("com.confino.gav.notifier.NotificationService")) {
-				System.out.println(resource.getName());
-				context.saveMeasure(resource, DifferentialMetrics.DIFFERENTIAL, new Double(80));
+				context.saveMeasure(resource, DifferentialMetrics.DIFFERENTIAL, new Double(60));
 			}
 			if (resource.getName().equals("com.confino.gav.notifier.ProjectInfo")) {
-				System.out.println(resource.getName());
-				context.saveMeasure(resource, DifferentialMetrics.DIFFERENTIAL, new Double(80));
+				context.saveMeasure(resource, DifferentialMetrics.DIFFERENTIAL, new Double(50));
 			}
 		}
 	}
