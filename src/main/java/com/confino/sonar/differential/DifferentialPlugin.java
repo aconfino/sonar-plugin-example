@@ -7,6 +7,7 @@ import org.sonar.api.SonarPlugin;
 
 import com.confino.sonar.differential.batch.DifferentialMetrics;
 import com.confino.sonar.differential.batch.DifferentialSensor;
+import com.confino.sonar.differential.batch.MyRuleRepository;
 import com.confino.sonar.differential.ui.DifferentialCoverageRubyWidget;
 
 /**
@@ -20,6 +21,7 @@ public List getExtensions() {
     return Arrays.asList(
     		DifferentialMetrics.class, 
     		DifferentialSensor.class,
+    		MyRuleRepository.class,
     		DifferentialCoverageRubyWidget.class);
   }
 }
